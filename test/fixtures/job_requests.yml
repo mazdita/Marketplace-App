@@ -1,0 +1,25 @@
+# # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# one:
+#   start_date: 2022-06-14
+#   end_date: 2022-06-14
+#   job_function: MyString
+#   address: MyString
+#   vacancies_count: 1
+#   monthly_salary: 1
+#   status: MyString
+#   details: MyText
+#   requirements: MyString
+#   client: one
+
+# two:
+#   start_date: 2022-06-14
+#   end_date: 2022-06-14
+#   job_function: MyString
+#   address: MyString
+#   vacancies_count: 1
+#   monthly_salary: 1
+#   status: MyString
+#   details: MyText
+#   requirements: MyString
+#   client: two

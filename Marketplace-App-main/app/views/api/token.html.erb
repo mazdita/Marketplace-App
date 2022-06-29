@@ -1,0 +1,11 @@
+<%if @admin && @admin.api_key%>
+    <h1>Your API KEY: <%= @admin.api_key%></h1>
+    <%= form_with url: api_update_token_path, method: :get  do |f|%>
+        <%= f.submit "Generate new Token"%>
+    <%end%>
+<%else%>
+    <h1>You dont have any keys yet</h1>
+    <%= form_with url: api_update_token_path, method: :get  do |f|%>
+        <%= f.submit "Generate new Token"%>
+    <%end%>
+<%end%>

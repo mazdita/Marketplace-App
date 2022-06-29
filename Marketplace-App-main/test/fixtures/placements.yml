@@ -1,0 +1,17 @@
+# # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# one:
+#   candidacy: one
+#   user: one
+#   client: one
+#   start_date: 2022-06-14
+#   end_date: 2022-06-14
+#   monthly_salary: 1
+
+# two:
+#   candidacy: two
+#   user: two
+#   client: two
+#   start_date: 2022-06-14
+#   end_date: 2022-06-14
+#   monthly_salary: 1

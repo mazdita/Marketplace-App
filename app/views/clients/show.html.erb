@@ -1,0 +1,14 @@
+<h1><%= @client.name %></h1>
+<h3><%= @client.email %></h3>
+<h3><%= @client.address %></h3>
+<h4>My job requests</h4>
+<small><%= link_to "Add a job request", new_job_request_path%></small>
+<hr>
+<ul>
+    <% @client.job_requests.each do |job|%>
+        <li><%= link_to "#{job.job_function}, #{job.address}", job_request_path(job)%>, Remaining vacancies:<%= job.vacancies_count%></li>
+    <%end%>
+</ul>
+<hr>
+<h4>Browse workers</h4>
+<%=button_to "workers", client_employees_path(@client), method: :get%>

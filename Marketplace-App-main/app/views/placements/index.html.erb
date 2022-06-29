@@ -1,0 +1,9 @@
+<% @placements.each do |placement|%>
+    <h4>Id:<%= placement.id%></h4>
+    <h4>Worker:</h4><p><%= link_to "#{placement.worker.first_name }", worker_path(placement.worker)%></p>
+    <h4>Company:</h1><%= link_to "#{placement.client.name }", client_path(placement.client)%></p>
+    <h4>Job Request:</h1><%= link_to "#{placement.job_request.job_function }", job_request_path(placement.job_request)%></p>
+    <%= button_to "Manage", placement_path(placement), method: :get%>
+    <hr>
+<%end%>
+<%= will_paginate%>

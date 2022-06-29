@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: 1
+  start_date: 2022-06-14
+  worker: one
+  job_request: one
+
+two:
+  status: 1
+  start_date: 2022-06-14
+  worker: two
+  job_request: two

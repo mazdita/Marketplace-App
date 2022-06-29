@@ -1,0 +1,13 @@
+<%= will_paginate%>
+
+<% @clients.each do |client|%>
+<h1><%= client.name %></h1>
+
+    <% client.job_requests.each do |request| %>
+        <p><%= request.job_function %></p>
+    <%end%>
+<%end%>
+<%if current_worker%>
+    <p>Holas<p>
+<%end%>
+<%= will_paginate%>

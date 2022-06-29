@@ -1,0 +1,3 @@
+<% @employees.each do |employee|%>
+    <h4><%= link_to "#{employee.first_name}", worker_path(employee), method: :get%>, <%= employee.job_request.job_function%></h4>
+<%end%>

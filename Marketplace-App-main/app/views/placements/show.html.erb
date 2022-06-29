@@ -1,0 +1,16 @@
+<h1>Placement Data</h1>
+<h4>Worker:</h4><p><%= link_to "#{@placement.worker.first_name }", worker_path(@placement.worker)%></p>
+<h4>Company:</h4><p><%= link_to "#{@placement.job_request.client.name }", client_path(@placement.job_request.client)%></p>
+<h4>Job Request:</h4><p><%= link_to "#{@placement.job_request.job_function }", job_request_path(@placement.job_request)%></p>
+<h4>start date:</h4><p><%= @placement.start_date %></p>
+<h4>End date:</h4><p><%= @placement.end_date %></p>
+<%if Time.zone.now > @placement.end_date - 1.year%>
+    <%= form_with model: @placement do |f|%>
+        <%= f.label "Extend untill"%>
+        <%= f.date_field :end_date%>
+        <%= f.submit "Extend"%>
+    <%end%>
+<%end%>
+<h4>Monthly salary:</h4><p><%= @placement.monthly_salary %></p>
+
+

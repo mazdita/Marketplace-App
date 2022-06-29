@@ -1,0 +1,7 @@
+<h1><%=@job.job_function%></h1>
+<%@workers.each do |worker|%>
+    <h4><%= link_to "#{worker.first_name}", worker_path(worker), method: :get%>, job fit score: <%= worker.job_fit_score%></h4>
+    <%= button_to "Send offer", send_offer_path, params: {worker_id: worker.id}, method: :get %>
+
+<%end%>
+<%= will_paginate @workers, params: {controller: :job_requests, action: :workers}%>

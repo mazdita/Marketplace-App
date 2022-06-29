@@ -1,0 +1,10 @@
+<h1>Candidacies</h1>
+
+<% @candidacies.each do |candidacy|%>
+    <h4>Id:<%= candidacy.id%></h4>
+    <h4>Worker:</h4><p><%= link_to "#{candidacy.worker.first_name }", worker_path(candidacy.worker)%></p>
+    <h4>Company:</h1><p><%= link_to "#{candidacy.job_request.client.name }", client_path(candidacy.job_request.client)%></p>
+    <%= button_to "Manage", candidacy_path(candidacy), method: :get%>
+    <hr>
+<%end%>
+<%= will_paginate%>

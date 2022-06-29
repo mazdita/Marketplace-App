@@ -1,0 +1,6 @@
+<h4>Which skills will be Required</h4>
+<%=form_with url: edit_skills_path do |f|%>
+    <%=f.hidden_field :id, value: params[:id]%>
+    <%=f.collection_check_boxes :killer, @job.skills, :id, :name, include_hidden: false%>
+    <%=f.submit "Submit"%>
+<%end%>

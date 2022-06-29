@@ -1,0 +1,16 @@
+<h1>Candidacy</h1>
+<h2>Id:<%= @candidacy.id%></h2>
+<h4>Worker:</h4><p><%= link_to "#{@candidacy.worker.first_name }", worker_path(@candidacy.worker)%></p>
+<h4>Company:</h4><%= link_to "#{@candidacy.job_request.client.name }", client_path(@candidacy.job_request.client)%></p>
+<h4>Status</h4><p><%= @candidacy.status%></p>
+<%if @candidacy.status == "validating"%>
+    <%= form_with model: @placement, url: new_placement_path, method: :get do |f|%>
+        <%= f.hidden_field :candidacy_id, value: @candidacy.id%>
+        <%= f.hidden_field :worker_id, value: @candidacy.worker.id%>
+        <%= f.hidden_field :client_id, value: @candidacy.job_request.client.id%>
+        <%= f.hidden_field :start_date, value: @candidacy.start_date%>
+        <%= f.hidden_field :end_date, value: @candidacy.job_request.end_date%>
+        <%= f.hidden_field :monthly_salary, value: @candidacy.job_request.monthly_salary%>
+        <%= f.submit "Create Placement"%>
+    <%end%>
+<%end%>

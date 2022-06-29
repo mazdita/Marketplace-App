@@ -1,0 +1,15 @@
+<%= search_form_for @q do |f| %>
+  <%# <%= f.label "Search User" %> 
+  <%= f.search_field :first_name_cont, placeholder: "Search for user" %>
+  <%= f.submit %>
+<% end %>
+<ul>
+<%@workers.each do |worker|%>
+    <li><%= worker.first_name%></li>
+    <%#if current_client%>
+    <%# <%= button_to "Send offer", send_offer_path, params: {worker_id: worker.id}, method: :get %>
+    <%#end%>
+    <hr>
+<%end%>
+</ul>
+<%= will_paginate%>

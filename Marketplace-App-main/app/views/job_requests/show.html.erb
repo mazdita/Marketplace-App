@@ -1,0 +1,18 @@
+<h1>Job request with id: <%= @request.id%></h1>
+<h1>Company: <%= link_to "#{@request.client.name }", client_path(@request.client)%></h1>
+<h3><%= @request.address %></h3>
+<p>Vacancies: <%= @request.vacancies_count%></p>
+
+<%if current_worker && !current_worker.already_applied(params)%>
+    <%= form_with model: @candidacy  do |f|%>
+        <%= f.hidden_field :status, value: "validating" %>
+        <%= f.hidden_field :start_date, value: @request.start_date%>
+        <%= f.hidden_field :job_request_id, value: @request.id%>
+        <%= f.hidden_field :worker_id, value: current_worker.id%>
+        <%= f.submit "Apply" %>
+    <%end%>
+<%elsif current_client%>
+    <%= button_to "Edit Request", edit_job_request_path(@request), method: :get%>
+    <%= button_to "Delete Request", job_request_path(@request), method: :delete%>
+    <%= button_to "See fitting workers", job_request_workers_path(@request), method: :get%>
+<%end%>

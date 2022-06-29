@@ -1,0 +1,20 @@
+<div class= "container">
+<%#= will_paginate%>
+<%= search_form_for @q do |f| %>
+  <%# <%= f.label "Search User" %> 
+  <%= f.search_field :job_function_cont, placeholder: "Search for job" %>
+  <%= f.submit %>
+<% end %>
+<% @job_requests.each do |request|%>
+
+    <h1><%= link_to "#{request.job_function}", job_request_path(request) , method: :get%></h1>
+    <h3>Fill rate: <%= request.fill_rate %>%</h3>
+        <h3>Company: <%=request.client.name%></h3>
+        <%#request.calculate_market_value%>
+        <h3>Address: <%=request.address%></h3>
+        <h3><%= request.details%></h3>
+    <hr>
+<%end%>
+
+<%= will_paginate%>
+</div>
